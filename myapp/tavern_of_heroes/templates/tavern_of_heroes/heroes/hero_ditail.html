@@ -21,3 +21,10 @@
 </ul>
 
 <a href="{% url 'level_up' hero.id %}">Повысить уровень</a>
+
+<form action="{% url 'delete_hero' hero.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Удалить героя">
+</form>
+
+<a href="{% url 'tavern' %}">Назад в таверну</a>

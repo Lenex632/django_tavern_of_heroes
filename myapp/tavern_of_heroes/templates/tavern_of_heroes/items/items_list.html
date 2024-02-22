@@ -1,0 +1,37 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'tavern_of_heroes/style.css' %}">
+
+{% if items_list %}
+    <div id="items_list">
+        {% for item in items_list %}
+            <a href="{% url 'item_ditail' item.id %}">
+                <h3>{{ item.name }}</h3>
+{#                {% for key, value in hero.stats.items %}#}
+{#                    <p>{{ key }}: {{ value }}</p>#}
+{#                {% endfor %}#}
+            </a>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Все предметы были украдены гоблинами</p>
+{% endif %}
+
+<form action="{% url 'create_item' %}" method="post">
+    {% csrf_token %}
+    <legend><h1>Создать новый предмет</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <label for="choose_item_name">Выберите название предмета</label>
+    <input type="text" name="choose_item_name" id="choose_item_name" required="required">
+    <label for="choose_item_type">Выберите тип предмета</label>
+    <select name="choose_item_type" id="choose_item_type" required="required">
+        {% for type, value in item_types %}
+            <option value="{{ type }}">{{ type }}</option>
+        {% endfor %}
+    </select>
+    <label for="choose_item_description">Опишите предмет</label>
+    <textarea name="choose_item_description" id="choose_item_description" required="required"></textarea>
+    <input type="submit" value="Создать">
+</form>
+
+<a href="{% url 'tavern' %}">Назад в таверну</a>

@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Item(models.Model):
-    ItemTypes = models.TextChoices("ItemTypes", "Armor Helmet Gloves Boots Weapon Special")
+    ItemTypes = models.TextChoices('ItemTypes', 'Оружие Броня Перчатки Сапоги Шлем Особое')
 
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=200)
@@ -24,7 +24,7 @@ class Hero(models.Model):
     description = models.CharField(max_length=200)
     hero_class = models.CharField(max_length=1, choices=CLASSES)
     level = models.IntegerField(default=1)
-    creation_data = models.DateTimeField("Creation data")
+    creation_data = models.DateTimeField("Creation data", auto_now=True)
 
     health = models.IntegerField(default=100)
     mana = models.IntegerField(default=100)

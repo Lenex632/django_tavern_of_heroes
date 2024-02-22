@@ -1,0 +1,8 @@
+<h1>{{ item.name }}</h1>
+<h3>Тип: {{ item.type }}</h3>
+<p>{{ item.description }}</p>
+<form action="{% url 'delete_item' item.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Удалить предмет">
+</form>
+<a href="{% url 'items_list' %}">Назад к предметам в таверне</a>
