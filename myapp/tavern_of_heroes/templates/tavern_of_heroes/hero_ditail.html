@@ -1,0 +1,23 @@
+<h1>{{ hero.name }}</h1>
+<h2>{{ hero.get_hero_class_display }} {{ hero.level }} уровня</h2>
+<p>Создан {{ hero.creation_data }}</p>
+<h3>{{ hero.description }}</h3>
+<p>Характеристики:</p>
+<ul>
+    {% for key, value in hero.stats.items %}
+        <li>{{ key }}: {{ value }}</li>
+    {% endfor %}
+</ul>
+<p>Инвентарь:</p>
+<ul>
+    <li>{{ hero.gold }} золотых</li>
+    {% if hero.inventory %}
+        {% for item in hero.inventory %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    {% else %}
+        <p>Инвентарь пуст</p>
+    {% endif %}
+</ul>
+
+<a href="{% url 'level_up' hero.id %}">Повысить уровень</a>

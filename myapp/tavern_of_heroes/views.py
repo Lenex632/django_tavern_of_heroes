@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
-from .models import Hero, Inventory
+from .models import Hero, Item
 
 
 def index(request):
@@ -10,17 +10,26 @@ def index(request):
     return render(request, 'tavern_of_heroes/index.html', context)
 
 
-def description(request, hero_id):
+def hero_ditail(request, hero_id):
     hero = get_object_or_404(Hero, pk=hero_id)
-    inventory = Inventory.objects.get(hero=hero_id)
-    context = {'hero': hero, 'inventory': inventory}
-    return render(request, 'tavern_of_heroes/description.html', context)
+    context = {'hero': hero}
+    return render(request, 'tavern_of_heroes/hero_ditail.html', context)
 
 
-def hero_class(request, hero_id):
-    response = f"Класс героя {hero_id}."
-    return HttpResponse(response)
+def items_list(request):
+    items = Item.objects.all()
+    context = {'items_list': items}
+    return render(request, 'tavern_of_heroes/items_list.html', context)
+
+
+def item_ditail(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+    context = {'item': item}
+    return render(request, 'tavern_of_heroes/item_ditail.html', context)
 
 
 def level_up(request, hero_id):
-    return HttpResponse(f"Ты повысил уровень героя {hero_id}.")
+    hero = get_object_or_404(Hero, pk=hero_id)
+    hero.level_up()
+    context = {'hero': hero}
+    return render(request, 'tavern_of_heroes/level_up.html', context)
