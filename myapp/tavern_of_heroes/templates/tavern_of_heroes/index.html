@@ -1,0 +1,20 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'tavern_of_heroes/style.css' %}">
+
+{% if hero_list %}
+    <div id="hero_list">
+        {% for hero in hero_list %}
+            <a href="{% url 'description' hero.id %}">
+                <h3>{{ hero.name }}</h3>
+                <h5>{{ hero.get_hero_class_display }} {{ hero.level }} уровня</h5>
+                <p>HP: {{ hero.health }}</p>
+                <p>MP: {{ hero.mana }}</p>
+                <p>ATK: {{ hero.attack }}</p>
+                <p>DEF: {{ hero.defence }}</p>
+            </a>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Сейчас в таверне нет героев</p>
+{% endif %}

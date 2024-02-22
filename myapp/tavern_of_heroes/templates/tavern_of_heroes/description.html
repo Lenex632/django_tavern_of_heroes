@@ -1,0 +1,17 @@
+<h1>{{ hero.name }}</h1>
+<h2>{{ hero.get_hero_class_display }} {{ hero.level }} уровня</h2>
+<h3>{{ hero.description }}</h3>
+<p>Характеристики:</p>
+<ul>
+    <li>HP: {{ hero.health }}</li>
+    <li>MP: {{ hero.mana }}</li>
+    <li>ATK: {{ hero.attack }}</li>
+    <li>DEF: {{ hero.defence }}</li>
+</ul>
+<p>Инвентарь</p>
+<ul>
+    <li>{{ inventory.gold }} золотых</li>
+    {% for item in inventory.list_of_items %}
+        <li>item</li>
+    {% endfor %}
+</ul>

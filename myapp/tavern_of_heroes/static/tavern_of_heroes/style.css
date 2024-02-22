@@ -1,0 +1,25 @@
+#hero_list {
+    display: flex;
+    flex-direction: row;
+}
+#hero_list a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: black;
+    padding: 0 15px;
+    border: solid 2px lightblue;
+    border-radius: 15px;
+}
+#hero_list a:hover {
+    border: solid 2px blue;
+    border-radius: 15px;
+}
+#hero_list a>p {
+    margin: 0;
+}
+#hero_list a>h3 {
+    margin-bottom: 0;
+}
+#hero_list a>h5 {
+    margin-top: 0;
+}
