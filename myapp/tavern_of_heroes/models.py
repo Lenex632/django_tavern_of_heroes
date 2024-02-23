@@ -53,3 +53,11 @@ class Hero(models.Model):
     def level_up(self):
         self.level += 1
         self.save()
+
+    def remove_item_from_inventory(self, item: Item):
+        self.list_of_items.remove(item)
+        self.save()
+
+    def give_item_to_hero(self, item: Item):
+        self.list_of_items.add(item)
+        self.save()

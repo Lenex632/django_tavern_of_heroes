@@ -13,7 +13,13 @@
     <li>{{ hero.gold }} золотых</li>
     {% if hero.inventory %}
         {% for item in hero.inventory %}
-            <li>{{ item }}</li>
+            <li>
+                <a href="{% url 'hero_item_detail' hero.id item.id %}">{{ item.name }}</a>
+                <form action="{% url 'remove_item_from_inventory' hero.id item.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Выкинуть предмет">
+                </form>
+            </li>
         {% endfor %}
     {% else %}
         <p>Инвентарь пуст</p>

@@ -5,4 +5,14 @@
     {% csrf_token %}
     <input type="submit" value="Удалить предмет">
 </form>
+<form action="{% url 'give_item_to_hero' item.id %}" method="post">
+    {% csrf_token %}
+    <label for="choose_hero">Выберите героя</label>
+    <select name="choose_hero" id="choose_hero" required="required">
+        {% for hero in heroes %}
+            <option value="{{ hero.id }}">{{ hero.name }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Дать предмет герою">
+</form>
 <a href="{% url 'items_list' %}">Назад к предметам в таверне</a>
