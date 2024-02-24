@@ -37,7 +37,7 @@ def delete_hero(request, hero_id: int) -> HttpResponseRedirect:
     hero = get_object_or_404(Hero, pk=hero_id)
     # message = f'Герой {item.name} уже напился и пошёл спать'
     hero.delete()
-    return redirect('tavern')
+    return redirect('app:tavern')
 
 
 def hero_item_detail(request, hero_id: int, item_id: int) -> HttpResponse:

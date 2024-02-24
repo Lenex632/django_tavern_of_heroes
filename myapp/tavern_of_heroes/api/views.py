@@ -1,5 +1,5 @@
 from ..models import Item, Hero
-from rest_framework import generics
+from rest_framework import mixins, generics
 
 from .serializers import HeroSerializer, ItemSerializer
 
@@ -22,3 +22,8 @@ class ItemsListView(generics.ListAPIView):
 class ItemsDetailView(generics.RetrieveAPIView):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
+
+
+class CreateHeroView(generics.CreateAPIView):
+    queryset = Hero.objects.all()
+    serializer_class = HeroSerializer
