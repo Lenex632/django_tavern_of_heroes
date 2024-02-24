@@ -14,8 +14,8 @@
     {% if hero.inventory %}
         {% for item in hero.inventory %}
             <li>
-                <a href="{% url 'hero_item_detail' hero.id item.id %}">{{ item.name }}</a>
-                <form action="{% url 'remove_item_from_inventory' hero.id item.id %}" method="post">
+                <a href="{% url 'app:hero_item_detail' hero.id item.id %}">{{ item.name }}</a>
+                <form action="{% url 'app:remove_item_from_inventory' hero.id item.id %}" method="post">
                     {% csrf_token %}
                     <input type="submit" value="Выкинуть предмет">
                 </form>
@@ -26,11 +26,11 @@
     {% endif %}
 </ul>
 
-<a href="{% url 'level_up' hero.id %}">Повысить уровень</a>
+<a href="{% url 'app:level_up' hero.id %}">Повысить уровень</a>
 
-<form action="{% url 'delete_hero' hero.id %}" method="post">
+<form action="{% url 'app:delete_hero' hero.id %}" method="post">
     {% csrf_token %}
     <input type="submit" value="Удалить героя">
 </form>
 
-<a href="{% url 'tavern' %}">Назад в таверну</a>
+<a href="{% url 'app:tavern' %}">Назад в таверну</a>

@@ -5,7 +5,7 @@
 {% if hero_list %}
     <div id="hero_list">
         {% for hero in hero_list %}
-            <a href="{% url 'hero_ditail' hero.id %}">
+            <a href="{% url 'app:hero_ditail' hero.id %}">
                 <h3>{{ hero.name }}</h3>
                 <h5>{{ hero.get_hero_class_display }} {{ hero.level }} уровня</h5>
                 {% for key, value in hero.stats.items %}
@@ -18,7 +18,7 @@
     <p>Сейчас в таверне нет героев</p>
 {% endif %}
 
-<form action="{% url 'create_hero' %}" method="post">
+<form action="{% url 'app:create_hero' %}" method="post">
     {% csrf_token %}
     <legend><h1>Создать нового героя</h1></legend>
     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -35,4 +35,4 @@
     <input type="submit" value="Создать">
 </form>
 
-<a href="{% url 'items_list' %}">Посмотреть предметы в таверне</a>
+<a href="{% url 'app:items_list' %}">Посмотреть предметы в таверне</a>
