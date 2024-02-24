@@ -1,0 +1,143 @@
+[
+{
+  "model": "tavern_of_heroes.hero",
+  "pk": 1,
+  "fields": {
+    "name": "Алёша",
+    "description": "Дэбил с булавой",
+    "hero_class": "W",
+    "level": 5,
+    "creation_data": "2024-02-22T16:08:59.480Z",
+    "health": 100,
+    "mana": 100,
+    "attack": 100,
+    "defence": 100,
+    "gold": 1000,
+    "list_of_items": [
+      1
+    ]
+  }
+},
+{
+  "model": "tavern_of_heroes.hero",
+  "pk": 2,
+  "fields": {
+    "name": "Мэрлин",
+    "description": "Поехавший старик",
+    "hero_class": "M",
+    "level": 2,
+    "creation_data": "2024-02-23T12:47:05.018Z",
+    "health": 100,
+    "mana": 100,
+    "attack": 100,
+    "defence": 100,
+    "gold": 1000,
+    "list_of_items": [
+      4
+    ]
+  }
+},
+{
+  "model": "tavern_of_heroes.hero",
+  "pk": 3,
+  "fields": {
+    "name": "Робин",
+    "description": "Обезьяна в трико",
+    "hero_class": "A",
+    "level": 1,
+    "creation_data": "2024-02-22T05:52:19Z",
+    "health": 100,
+    "mana": 100,
+    "attack": 100,
+    "defence": 100,
+    "gold": 1000,
+    "list_of_items": [
+      3
+    ]
+  }
+},
+{
+  "model": "tavern_of_heroes.hero",
+  "pk": 4,
+  "fields": {
+    "name": "Соловей",
+    "description": "Свистун с выбитым зубом",
+    "hero_class": "T",
+    "level": 1,
+    "creation_data": "2024-02-22T05:53:04Z",
+    "health": 100,
+    "mana": 100,
+    "attack": 100,
+    "defence": 100,
+    "gold": 1000,
+    "list_of_items": [
+      5
+    ]
+  }
+},
+{
+  "model": "tavern_of_heroes.hero",
+  "pk": 7,
+  "fields": {
+    "name": "Гендальф",
+    "description": "Пьяный бомж с бородой",
+    "hero_class": "M",
+    "level": 1,
+    "creation_data": "2024-02-23T13:04:03.935Z",
+    "health": 100,
+    "mana": 100,
+    "attack": 100,
+    "defence": 100,
+    "gold": 1000,
+    "list_of_items": [
+      4,
+      9
+    ]
+  }
+},
+{
+  "model": "tavern_of_heroes.item",
+  "pk": 1,
+  "fields": {
+    "name": "Ржавый меч",
+    "description": "Меч из говна и палок",
+    "type": "Оружие"
+  }
+},
+{
+  "model": "tavern_of_heroes.item",
+  "pk": 3,
+  "fields": {
+    "name": "Ржавый лук",
+    "description": "Лук из говна и палок",
+    "type": "Оружие"
+  }
+},
+{
+  "model": "tavern_of_heroes.item",
+  "pk": 4,
+  "fields": {
+    "name": "Мокрый посох",
+    "description": "Палка из лужи",
+    "type": "Оружие"
+  }
+},
+{
+  "model": "tavern_of_heroes.item",
+  "pk": 5,
+  "fields": {
+    "name": "Ржавый нож",
+    "description": "Зубачистка из таверны",
+    "type": "Оружие"
+  }
+},
+{
+  "model": "tavern_of_heroes.item",
+  "pk": 9,
+  "fields": {
+    "name": "Око Кунгура",
+    "description": "Оно всё видит и всё закрывает",
+    "type": "Особое"
+  }
+}
+]
