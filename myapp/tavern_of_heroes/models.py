@@ -24,7 +24,7 @@ class Hero(models.Model):
     description = models.CharField(max_length=200)
     hero_class = models.CharField(max_length=1, choices=CLASSES)
     level = models.IntegerField(default=1)
-    creation_data = models.DateTimeField(auto_now=True)
+    creation_data = models.DateTimeField(auto_now_add=True)
 
     health = models.IntegerField(default=100)
     mana = models.IntegerField(default=100)
