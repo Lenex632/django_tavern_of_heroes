@@ -51,4 +51,4 @@ def remove_item_from_inventory(request, hero_id: int, item_id: int) -> HttpRespo
     hero = get_object_or_404(Hero, pk=hero_id)
     item = Item.objects.get(pk=item_id)
     hero.remove_item_from_inventory(item)
-    return redirect('hero_ditail', hero_id=hero_id)
+    return redirect('app:hero_ditail', hero_id=hero_id)

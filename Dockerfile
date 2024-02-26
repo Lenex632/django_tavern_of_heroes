@@ -8,4 +8,4 @@ COPY myapp .
 RUN pip install -r requirements.txt
 
 RUN chmod +x start.sh
-CMD ["./start.sh"]
+CMD ["/bin/sh", "start.sh"]

@@ -31,7 +31,7 @@ def delete_item(request, item_id: int) -> HttpResponseRedirect:
     item = get_object_or_404(Item, pk=item_id)
     # message = f'Предмет {item.name} был выброшен со склада'
     item.delete()
-    return redirect('items_list')
+    return redirect('app:items_list')
 
 
 def give_item_to_hero(request, item_id: int) -> HttpResponseRedirect:
@@ -39,4 +39,4 @@ def give_item_to_hero(request, item_id: int) -> HttpResponseRedirect:
     hero_id = request.POST['choose_hero']
     hero = get_object_or_404(Hero, pk=hero_id)
     hero.give_item_to_hero(item)
-    return redirect('item_ditail', item_id=item_id)
+    return redirect('app:item_ditail', item_id=item_id)
