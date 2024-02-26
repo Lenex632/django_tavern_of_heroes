@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: db
+    image: postgres:16.2
+    restart: always
+    environment:
+      - POSTGRES_DB=tavern_of_heroes
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data/
+
+  app:
+    container_name: app
+    build: .
+    environment:
+      - PYTHONUNBUFFERED=1
+      - ADMIN_USERNAME=admin
+      - ADMIN_EMAIL=admin@admin.com
+      - ADMIN_PASSWORD=password
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  dbdata: null
