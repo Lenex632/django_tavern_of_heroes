@@ -7,5 +7,4 @@ COPY requirements.txt .
 COPY myapp .
 RUN pip install -r requirements.txt
 
-RUN chmod +x start.sh
-CMD ["/bin/sh", "start.sh"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
