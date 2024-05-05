@@ -23,3 +23,18 @@
 #hero_list a>h5 {
     margin-top: 0;
 }
+
+#login_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+    height: 50px;
+    background-color: lightblue;
+    margin-bottom: 10px;
+}
+#login_info * {
+    margin-left: 10px;
+    text-decoration: none;
+    color: blue;
+}

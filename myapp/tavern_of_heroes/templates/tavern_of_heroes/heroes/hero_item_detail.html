@@ -1,9 +1,15 @@
-<h1>{{ item.name }}</h1>
-<p>Владелец: {{ hero.name }}</p>
-<h3>Тип: {{ item.type }}</h3>
-<p>{{ item.description }}</p>
-<form action="{% url 'app:remove_item_from_inventory' hero.id item.id %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value="Выкинуть предмет">
-</form>
-<a href="{% url 'app:hero_ditail' hero.id %}">Назад к герою</a>
+{% extends "tavern_of_heroes/base.html" %}
+
+{% block title %}{{ item.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ item.name }}</h1>
+    <p>Владелец: {{ hero.name }}</p>
+    <h3>Тип: {{ item.type }}</h3>
+    <p>{{ item.description }}</p>
+    <form action="{% url 'app:remove_item_from_inventory' hero.id item.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Выкинуть предмет">
+    </form>
+    <a href="{% url 'app:hero_ditail' hero.id %}">Назад к герою</a>
+{% endblock %}

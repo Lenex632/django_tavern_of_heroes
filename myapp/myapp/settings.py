@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'tavern_of_heroes',
         'USER': 'postgres',
         'PASSWORD': 'password',
-        "HOST": "db",
+        "HOST": "172.17.0.1",
         "PORT": "5432",
     }
 }

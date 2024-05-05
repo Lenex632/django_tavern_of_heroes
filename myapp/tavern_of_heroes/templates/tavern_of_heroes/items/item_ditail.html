@@ -1,18 +1,24 @@
-<h1>{{ item.name }}</h1>
-<h3>Тип: {{ item.type }}</h3>
-<p>{{ item.description }}</p>
-<form action="{% url 'app:delete_item' item.id %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value="Удалить предмет">
-</form>
-<form action="{% url 'app:give_item_to_hero' item.id %}" method="post">
-    {% csrf_token %}
-    <label for="choose_hero">Выберите героя</label>
-    <select name="choose_hero" id="choose_hero" required="required">
-        {% for hero in heroes %}
-            <option value="{{ hero.id }}">{{ hero.name }}</option>
-        {% endfor %}
-    </select>
-    <input type="submit" value="Дать предмет герою">
-</form>
-<a href="{% url 'app:items_list' %}">Назад к предметам в таверне</a>
+{% extends "tavern_of_heroes/base.html" %}
+
+{% block title %}{{ item.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ item.name }}</h1>
+    <h3>Тип: {{ item.type }}</h3>
+    <p>{{ item.description }}</p>
+    <form action="{% url 'app:delete_item' item.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Удалить предмет">
+    </form>
+    <form action="{% url 'app:give_item_to_hero' item.id %}" method="post">
+        {% csrf_token %}
+        <label for="choose_hero">Выберите героя</label>
+        <select name="choose_hero" id="choose_hero" required="required">
+            {% for hero in heroes %}
+                <option value="{{ hero.id }}">{{ hero.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Дать предмет герою">
+    </form>
+    <a href="{% url 'app:items_list' %}">Назад к предметам в таверне</a>
+{% endblock %}

@@ -1,2 +1,8 @@
-<h1>{{ hero.name }} теперь {{ hero.level }} уровня</h1>
-<a href="{% url 'app:hero_ditail' hero.id %}">Вернуться</a>
+{% extends "tavern_of_heroes/base.html" %}
+
+{% block title %}{{ hero.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ hero.name }} теперь {{ hero.level }} уровня</h1>
+    <a href="{% url 'app:hero_ditail' hero.id %}">Вернуться</a>
+{% endblock %}

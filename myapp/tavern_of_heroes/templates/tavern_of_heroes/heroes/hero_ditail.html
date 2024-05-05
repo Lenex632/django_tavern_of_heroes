@@ -1,36 +1,42 @@
-<h1>{{ hero.name }}</h1>
-<h2>{{ hero.get_hero_class_display }} {{ hero.level }} уровня</h2>
-<p>Создан {{ hero.creation_data }}</p>
-<h3>{{ hero.description }}</h3>
-<p>Характеристики:</p>
-<ul>
-    {% for key, value in hero.stats.items %}
-        <li>{{ key }}: {{ value }}</li>
-    {% endfor %}
-</ul>
-<p>Инвентарь:</p>
-<ul>
-    <li>{{ hero.gold }} золотых</li>
-    {% if hero.inventory %}
-        {% for item in hero.inventory %}
-            <li>
-                <a href="{% url 'app:hero_item_detail' hero.id item.id %}">{{ item.name }}</a>
-                <form action="{% url 'app:remove_item_from_inventory' hero.id item.id %}" method="post">
-                    {% csrf_token %}
-                    <input type="submit" value="Выкинуть предмет">
-                </form>
-            </li>
+{% extends "tavern_of_heroes/base.html" %}
+
+{% block title %}{{ hero.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ hero.name }}</h1>
+    <h2>{{ hero.get_hero_class_display }} {{ hero.level }} уровня</h2>
+    <p>Создан {{ hero.creation_data }}</p>
+    <h3>{{ hero.description }}</h3>
+    <p>Характеристики:</p>
+    <ul>
+        {% for key, value in hero.stats.items %}
+            <li>{{ key }}: {{ value }}</li>
         {% endfor %}
-    {% else %}
-        <p>Инвентарь пуст</p>
-    {% endif %}
-</ul>
+    </ul>
+    <p>Инвентарь:</p>
+    <ul>
+        <li>{{ hero.gold }} золотых</li>
+        {% if hero.inventory %}
+            {% for item in hero.inventory %}
+                <li>
+                    <a href="{% url 'app:hero_item_detail' hero.id item.id %}">{{ item.name }}</a>
+                    <form action="{% url 'app:remove_item_from_inventory' hero.id item.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Выкинуть предмет">
+                    </form>
+                </li>
+            {% endfor %}
+        {% else %}
+            <p>Инвентарь пуст</p>
+        {% endif %}
+    </ul>
 
-<a href="{% url 'app:level_up' hero.id %}">Повысить уровень</a>
+    <a href="{% url 'app:level_up' hero.id %}">Повысить уровень</a>
 
-<form action="{% url 'app:delete_hero' hero.id %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value="Удалить героя">
-</form>
+    <form action="{% url 'app:delete_hero' hero.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Удалить героя">
+    </form>
 
-<a href="{% url 'app:tavern' %}">Назад в таверну</a>
+    <a href="{% url 'app:tavern' %}">Назад в таверну</a>
+{% endblock %}

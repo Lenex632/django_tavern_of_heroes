@@ -1,0 +1,16 @@
+{% extends "tavern_of_heroes/base.html" %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+    <form action="{% url 'app:login' %}" method="post">
+        {% csrf_token %}
+        <legend><h1>Вход</h1></legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <label for="username">Логин</label>
+        <input type="text" name="username" id="username" required="required">
+        <label for="password">Пароль</label>
+        <input type="password" name="password" id="password" required="required">
+        <input type="submit" value="Войти в таверну">
+    </form>
+{% endblock %}

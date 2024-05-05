@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views_hero, views_items
+from . import views_hero, views_items, views_login
 
 app_name = 'app'
 
@@ -26,4 +26,9 @@ urlpatterns = [
         views_items.give_item_to_hero,
         name="give_item_to_hero"
     ),
+
+    path("login/", views_login.sign_in, name="login"),
+    path("logout/", views_login.sign_out, name="logout"),
+    path("registration/", views_login.registration, name="registration"),
+
 ]

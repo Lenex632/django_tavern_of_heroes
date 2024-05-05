@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Item(models.Model):
@@ -19,7 +20,7 @@ class Hero(models.Model):
         ('A', 'Лучник'),
         ('T', 'Вор')
     ]
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=200)
     hero_class = models.CharField(max_length=1, choices=CLASSES)
