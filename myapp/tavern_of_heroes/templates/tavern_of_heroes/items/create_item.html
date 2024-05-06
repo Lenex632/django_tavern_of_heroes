@@ -1,8 +1,0 @@
-{% extends "tavern_of_heroes/base.html" %}
-
-{% block title %}Вы создали новый предмет{% endblock %}
-
-{% block content %}
-    <h1>Вы создали новый предмет {{ item.name }}</h1>
-    <a href="{% url 'app:items_list' %}">Назад в на склад</a>
-{% endblock %}

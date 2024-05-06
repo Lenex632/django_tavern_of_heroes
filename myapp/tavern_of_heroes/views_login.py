@@ -1,8 +1,7 @@
-from django.http.response import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.http.response import HttpResponse
+from django.shortcuts import render, redirect
 from django.contrib import messages
-
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 
@@ -27,14 +26,13 @@ def sign_out(request) -> HttpResponse:
 
 def registration(request) -> HttpResponse:
     if request.method == 'POST':
-        user = User()
-        user.username = request.POST['username']
+        username = request.POST['username']
+        password = request.POST['password']
         try:
-            user.set_password(request.POST['password'])
-            user.save()
+            user = User.objects.create_user(username, password=password)
             login(request, user)
             return redirect('app:tavern')
-        except:
-            messages.error(request, 'Плохой пароль')
+        except Exception as e:
+            messages.error(request, f'Во время регистрации что-то пошло не так {e}')
 
     return render(request, 'tavern_of_heroes/login/registration.html')

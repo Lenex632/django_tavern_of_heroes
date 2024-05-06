@@ -1,8 +1,0 @@
-{% extends "tavern_of_heroes/base.html" %}
-
-{% block title %}Вы создали нового героя{% endblock %}
-
-{% block content %}
-    <h1>Вы создали нового героя {{ hero.name }}</h1>
-    <a href="{% url 'app:tavern' %}">Назад в таверну</a>
-{% endblock %}

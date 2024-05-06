@@ -3,38 +3,43 @@
 {% block title %}Таверна{% endblock %}
 
 {% block content %}
-    {% if hero_list %}
-        <div id="hero_list">
-            {% for hero in hero_list %}
-                <a href="{% url 'app:hero_ditail' hero.id %}">
-                    <h3>{{ hero.name }}</h3>
-                    <h5>{{ hero.get_hero_class_display }} {{ hero.level }} уровня</h5>
-                    {% for key, value in hero.stats.items %}
-                        <p>{{ key }}: {{ value }}</p>
-                    {% endfor %}
-                </a>
-            {% endfor %}
-        </div>
+    {% if not user.is_authenticated %}
+        <h2>Вы не можете посмотреть что в таверне, не войдя в таверну.</h2>
     {% else %}
-        <p>Сейчас в таверне нет героев</p>
+        {% if hero_list %}
+            <div id="hero_list">
+                {% for hero in hero_list %}
+                    <a href="{% url 'app:hero_ditail' hero.id %}">
+                        <h3>{{ hero.name }}</h3>
+                        <h5>{{ hero.get_hero_class_display }} {{ hero.level }} уровня</h5>
+                        {% for key, value in hero.stats.items %}
+                            <p>{{ key }}: {{ value }}</p>
+                        {% endfor %}
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Сейчас в таверне нет героев</p>
+        {% endif %}
+
+        <form action="{% url 'app:create_hero' %}" method="post">
+            {% csrf_token %}
+            <legend><h1>Создать нового героя</h1></legend>
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+            <label for="choose_hero_name">Выберите имя героя</label>
+            <input type="text" name="choose_hero_name" id="choose_hero_name" required="required">
+            <label for="choose_hero_class">Выберите класс героя</label>
+            <select name="choose_hero_class" id="choose_hero_class" required="required">
+                {% for key, value in classes %}
+                    <option value="{{ key }}">{{ value }}</option>
+                {% endfor %}
+            </select>
+            <label for="choose_hero_description">Опишите героя</label>
+            <textarea name="choose_hero_description" id="choose_hero_description" required="required"></textarea>
+            <input type="submit" value="Создать">
+        </form>
     {% endif %}
-
-    <form action="{% url 'app:create_hero' %}" method="post">
-        {% csrf_token %}
-        <legend><h1>Создать нового героя</h1></legend>
-        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-        <label for="choose_hero_name">Выберите имя героя</label>
-        <input type="text" name="choose_hero_name" id="choose_hero_name" required="required">
-        <label for="choose_hero_class">Выберите класс героя</label>
-        <select name="choose_hero_class" id="choose_hero_class" required="required">
-            {% for key, value in classes %}
-                <option value="{{ key }}">{{ value }}</option>
-            {% endfor %}
-        </select>
-        <label for="choose_hero_description">Опишите героя</label>
-        <textarea name="choose_hero_description" id="choose_hero_description" required="required"></textarea>
-        <input type="submit" value="Создать">
-    </form>
-
-    <a href="{% url 'app:items_list' %}">Посмотреть предметы в таверне</a>
+    {% if user.is_superuser %}
+        <a href="{% url 'app:items_list' %}">Посмотреть предметы в таверне</a>
+    {% endif %}
 {% endblock %}

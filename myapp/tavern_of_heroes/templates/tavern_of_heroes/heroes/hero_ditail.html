@@ -5,7 +5,8 @@
 {% block content %}
     <h1>{{ hero.name }}</h1>
     <h2>{{ hero.get_hero_class_display }} {{ hero.level }} уровня</h2>
-    <p>Создан {{ hero.creation_data }}</p>
+    <p>Пользователь: {{ hero.user.username }}</p>
+    <p>Создан: {{ hero.creation_data }}</p>
     <h3>{{ hero.description }}</h3>
     <p>Характеристики:</p>
     <ul>
