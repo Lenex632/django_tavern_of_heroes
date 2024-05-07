@@ -1,101 +1,5 @@
 [
 {
-  "model": "tavern_of_heroes.hero",
-  "pk": 1,
-  "fields": {
-    "name": "Алёша",
-    "description": "Дэбил с булавой",
-    "hero_class": "W",
-    "level": 5,
-    "creation_data": "2024-02-22T16:08:59.480Z",
-    "health": 100,
-    "mana": 100,
-    "attack": 100,
-    "defence": 100,
-    "gold": 1000,
-    "list_of_items": [
-      1
-    ]
-  }
-},
-{
-  "model": "tavern_of_heroes.hero",
-  "pk": 2,
-  "fields": {
-    "name": "Мэрлин",
-    "description": "Поехавший старик",
-    "hero_class": "M",
-    "level": 2,
-    "creation_data": "2024-02-23T12:47:05.018Z",
-    "health": 100,
-    "mana": 100,
-    "attack": 100,
-    "defence": 100,
-    "gold": 1000,
-    "list_of_items": [
-      4
-    ]
-  }
-},
-{
-  "model": "tavern_of_heroes.hero",
-  "pk": 3,
-  "fields": {
-    "name": "Робин",
-    "description": "Обезьяна в трико",
-    "hero_class": "A",
-    "level": 1,
-    "creation_data": "2024-02-22T05:52:19Z",
-    "health": 100,
-    "mana": 100,
-    "attack": 100,
-    "defence": 100,
-    "gold": 1000,
-    "list_of_items": [
-      3
-    ]
-  }
-},
-{
-  "model": "tavern_of_heroes.hero",
-  "pk": 4,
-  "fields": {
-    "name": "Соловей",
-    "description": "Свистун с выбитым зубом",
-    "hero_class": "T",
-    "level": 1,
-    "creation_data": "2024-02-22T05:53:04Z",
-    "health": 100,
-    "mana": 100,
-    "attack": 100,
-    "defence": 100,
-    "gold": 1000,
-    "list_of_items": [
-      5
-    ]
-  }
-},
-{
-  "model": "tavern_of_heroes.hero",
-  "pk": 7,
-  "fields": {
-    "name": "Гендальф",
-    "description": "Пьяный бомж с бородой",
-    "hero_class": "M",
-    "level": 1,
-    "creation_data": "2024-02-23T13:04:03.935Z",
-    "health": 100,
-    "mana": 100,
-    "attack": 100,
-    "defence": 100,
-    "gold": 1000,
-    "list_of_items": [
-      4,
-      9
-    ]
-  }
-},
-{
   "model": "tavern_of_heroes.item",
   "pk": 1,
   "fields": {
@@ -138,6 +42,520 @@
     "name": "Око Кунгура",
     "description": "Оно всё видит и всё закрывает",
     "type": "Особое"
+  }
+},
+{
+  "model": "tavern_of_heroes.item",
+  "pk": 10,
+  "fields": {
+    "name": "Банка пепси",
+    "description": "Хилит, есть возможность вызвать Месси на поле боя",
+    "type": "Особое"
+  }
+},
+{
+  "model": "tavern_of_heroes.item",
+  "pk": 12,
+  "fields": {
+    "name": "Ложка",
+    "description": "Эта та, что не вилка",
+    "type": "Оружие"
+  }
+},
+{
+  "model": "tavern_of_heroes.hero",
+  "pk": 1,
+  "fields": {
+    "user": 11,
+    "name": "Алёша",
+    "description": "Дэбил с булавой",
+    "hero_class": "W",
+    "level": 5,
+    "creation_data": "2024-02-22T16:08:59.480Z",
+    "health": 100,
+    "mana": 100,
+    "attack": 100,
+    "defence": 100,
+    "gold": 1000,
+    "list_of_items": [
+      1
+    ]
+  }
+},
+{
+  "model": "tavern_of_heroes.hero",
+  "pk": 2,
+  "fields": {
+    "user": 11,
+    "name": "Мэрлин",
+    "description": "Поехавший старик",
+    "hero_class": "M",
+    "level": 2,
+    "creation_data": "2024-02-23T12:47:05.018Z",
+    "health": 100,
+    "mana": 100,
+    "attack": 100,
+    "defence": 100,
+    "gold": 1000,
+    "list_of_items": [
+      4
+    ]
+  }
+},
+{
+  "model": "tavern_of_heroes.hero",
+  "pk": 3,
+  "fields": {
+    "user": 10,
+    "name": "Робин",
+    "description": "Обезьяна в трико",
+    "hero_class": "A",
+    "level": 2,
+    "creation_data": "2024-02-22T05:52:19Z",
+    "health": 100,
+    "mana": 100,
+    "attack": 100,
+    "defence": 100,
+    "gold": 1000,
+    "list_of_items": [
+      3
+    ]
+  }
+},
+{
+  "model": "tavern_of_heroes.hero",
+  "pk": 7,
+  "fields": {
+    "user": 10,
+    "name": "Гендальф",
+    "description": "Пьяный бомж с бородой",
+    "hero_class": "M",
+    "level": 1,
+    "creation_data": "2024-02-23T13:04:03.935Z",
+    "health": 100,
+    "mana": 100,
+    "attack": 100,
+    "defence": 100,
+    "gold": 1000,
+    "list_of_items": [
+      9,
+      4
+    ]
+  }
+},
+{
+  "model": "tavern_of_heroes.hero",
+  "pk": 10,
+  "fields": {
+    "user": 10,
+    "name": "Соловей",
+    "description": "Свистун буз зубов",
+    "hero_class": "T",
+    "level": 1,
+    "creation_data": "2024-05-06T06:18:18.079Z",
+    "health": 100,
+    "mana": 100,
+    "attack": 100,
+    "defence": 100,
+    "gold": 1000,
+    "list_of_items": [
+      5
+    ]
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-04-23T06:10:30.305Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "user",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-04-23T06:12:12.498Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "user",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-05-05T06:44:56.634Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "user",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-05-05T06:47:28.298Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "4",
+    "object_repr": "user2",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-05-05T06:50:10.239Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "user",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-05-05T06:55:29.091Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "7",
+    "object_repr": "Гендальф",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2024-05-05T06:55:39.122Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "4",
+    "object_repr": "Соловей",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2024-05-05T06:55:50.999Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "3",
+    "object_repr": "Робин",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2024-05-05T06:56:08.779Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "2",
+    "object_repr": "Мэрлин",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2024-05-05T06:56:14.277Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "1",
+    "object_repr": "Алёша",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2024-05-05T07:00:31.980Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "6",
+    "object_repr": "user3",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2024-05-05T07:00:39.648Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "7",
+    "object_repr": "user4",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2024-05-06T04:47:49.149Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "8",
+    "object_repr": "user3",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2024-05-06T04:50:19.255Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "9",
+    "object_repr": "user3",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2024-05-06T05:05:45.043Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "user",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2024-05-06T05:08:17.241Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "7",
+    "object_repr": "Гендальф",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2024-05-06T05:08:28.652Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "4",
+    "object_repr": "Соловей",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2024-05-06T05:11:08.921Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "7",
+    "object_repr": "Гендальф",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2024-05-06T05:11:15.842Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "4",
+    "object_repr": "Соловей",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2024-05-06T05:11:21.885Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "3",
+    "object_repr": "Робин",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2024-05-06T05:11:34.189Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "2",
+    "object_repr": "Мэрлин",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2024-05-06T05:11:41.888Z",
+    "user": 1,
+    "content_type": 1,
+    "object_id": "1",
+    "object_repr": "Алёша",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2024-05-06T05:11:56.691Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "user",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2024-05-06T05:11:56.697Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "5",
+    "object_repr": "user2",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2024-05-07T06:11:37.864Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "12",
+    "object_repr": "user1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$4mLEbJVsW5XrFsNdxE8Olk$pL3N7sZbWme6OaDEk6bRLmidIEGF5dOJNrTDunbZEtA=",
+    "last_login": "2024-05-06T06:18:59.899Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-02-24T08:29:44.058Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$EOvkTtfe9Hcfiag7Npehji$BzLGsRSpNeA2dZHE4hgPHkjZ3/15Py+DGAsoc3jVI6k=",
+    "last_login": "2024-05-06T06:12:10.287Z",
+    "is_superuser": false,
+    "username": "user3",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-05-06T05:08:41.421Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$nJCYHkp8Kl6Lqr07aQkj90$tuQtQb+n5xbMgWdYck0vLok02ZGLzaMvj/mtCDqscxQ=",
+    "last_login": "2024-05-06T05:51:56.990Z",
+    "is_superuser": false,
+    "username": "user4",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-05-06T05:08:53.221Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "0j04gerorwbp201a7bine35s52lf21o7",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pAZCggu3fcMZBhAqoYmpV0Z765NutDtf-_9lwi0rTVsPS9hSuIiUJx-t0j8yG0H6U7tNkue27pMUe6KPGiX45zy83q4fweVev3WrNgRUfGgvTOQMyHDkFgjWWTvHSbUPhYiRGVxgHIGMFxU1CoZa8X7A--DN7E:1rdnQ1:gJRpar14WvFRNl9_s0lVa95fCphi4N_xl-6w-35OBgg",
+    "expire_date": "2024-03-09T08:30:01.604Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "w6k0tj628abd5tw74g4exzt3ccfcr463",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pAZCggu3fcMZBhAqoYmpV0Z765NutDtf-_9lwi0rTVsPS9hSuIiUJx-t0j8yG0H6U7tNkue27pMUe6KPGiX45zy83q4fweVev3WrNgRUfGgvTOQMyHDkFgjWWTvHSbUPhYiRGVxgHIGMFxU1CoZa8X7A--DN7E:1s3rgh:QpDnGxNFpGO2ndNoF5k1GZWKj_4Nne2dRX4BBF65zEw",
+    "expire_date": "2024-05-20T06:18:59.905Z"
   }
 }
 ]

@@ -13,5 +13,5 @@ python manage.py migrate --no-input
 docker-compose run app python manage.py makemigrations --no-input tavern_of_heroes
 docker-compose run app python manage.py migrate --no-input
 docker-compose run app python manage.py createsuperuser
-docker-compose run app python loaddata db.json
+docker-compose run app python manage.py loaddata db.json
 ```
